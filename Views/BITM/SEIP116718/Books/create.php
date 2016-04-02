@@ -1,19 +1,27 @@
+<?php
+session_start();
+
+if(isset($_SESSION['Massage'])){
+    echo $_SESSION['Massage'];
+    unset($_SESSION['Massage']);
+}
+?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Book | Create</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         
-        <link rel="stylesheet" href="html/css/bootstrap.min.css">
-        <link rel="stylesheet" href="html/css/font-awesome.min.css">
-        <link rel="stylesheet" href="html/css/normalize.css">
-        <link rel="stylesheet" href="html/css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="../../../../html/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../../html/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../../html/css/normalize.css">
+        <link rel="stylesheet" href="../../../../html/css/main.css">
+        <script src="../../../../js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -28,11 +36,11 @@
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="index.html">Atomic Project</a>
+                                    <a class="navbar-brand" href="../../../../index.html">Atomic Project</a>
                                 </div>
                                 <ul class="nav navbar-nav">
                                     <li><a href="Views/BITM/SEIP116718/Books/index.php">Book</a></li>
-                                    <li><a href="Views/BITM/SEIP116718/Birthday/index.php">Birthday</a></li>
+                                    <li><a href="#">Birthday</a></li>
                                     <li><a href="#">Textarea</a></li>
                                     <li><a href="#">Email</a></li> 
                                     <li><a href="#">Profile Picture</a></li>
@@ -47,81 +55,68 @@
             </div>
         </div>
         
-<!--        <div class="header_area">
+        
+        <div class="Sub_menu_area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="header_text">
-                            <p>A great new free psd theme to showcase your new application.</p>
-                            <div class="our_icons">
-                                <a href=""><i class="fa fa-apple apple_icon"></i></a>
-                                <a href=""><i class="fa fa-android android_icon"></i></a>
-                                <a href=""><i class="fa fa-windows windows_icon"></i></a>
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="index.php">Book</a>
+                                </div>
+                                <ul class="nav navbar-nav">
+                                    <li><a href="create.php">Create</a></li>
+                                    <li><a href="deleteitem.php">Delete Item</a></li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-        
-        <div class="mini_project_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a><img src="html/img/book.png" alt="Book" height="250" width="250"></a>
-                    </div>
-                    
-                    <div class="col-lg-4">
-                        <a><img src="html/img/birthday.jpg" alt="Birthday" height="250" width="250"></a>
-                    </div>
-                    
-                    <div class="col-lg-4">
-                        <a><img src="html/img/textarea.png" alt="Textarea" height="250" width="250"></a>
+                        </nav> 
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="mini_project_area">
+        <div class="table_area create_area">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <a><img src="html/img/email.jpg" alt="email" height="250" width="250"></a>
-                    </div>
-                    
-                    <div class="col-lg-4">
-                        
-                    </div>
-                    
-                    <div class="col-lg-4">
-                        <a><img src="html/img/profile.jpeg" alt="profile" height="250" width="250"></a>
+                    <div class="col-lg-12">
+                        <form action="store.php" method="post">
+                            <div class="form-group">
+                                <label for="book">Book Name</label>
+                                <input name="title" type="test" class="form-control" id="book" placeholder="Book Name">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                                <input type ="reset" value="reset"class="btn btn-default" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="mini_project_area">
+        <div class="main_menu_area">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <a><img src="html/img/gender.jpg" alt="gender" height="250" width="250"></a>
-                    </div>
-                    
-                    <div class="col-lg-4">
-                        <a><img src="html/img/checkbox.png" alt="checkbox" height="250" width="250"></a>
-                    </div>
-                    
-                    <div class="col-lg-4">
-                        <a><img src="html/img/select.png" alt="select" height="250" width="250"></a>
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <div class="col-lg-4"></div>
+                                <ul class="nav navbar-nav">
+                                    <li><a href="">Atomic Project <i class="fa fa-copyright"></i> <?php echo date("Y");?> | Developed by Rakib Hossain</a></li>   
+                                </ul>
+                                <div class="col-lg-3"></div>
+                            </div>
+                        </nav> 
                     </div>
                 </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="html/js/bootstrap.min.js"></script>
-        <script src="html/js/plugins.js"></script>
-        <script src="html/js/main.js"></script>
+        <script src="../../../../html/js/bootstrap.min.js"></script>
+        <script src="../../../../html/js/plugins.js"></script>
+        <script src="../../../../html/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

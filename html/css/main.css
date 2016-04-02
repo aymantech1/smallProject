@@ -280,3 +280,20 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+.create_area{
+    min-height: 400px;
+}
+
+.table_index{}
+.table_index tbody{}
+.table_index tbody tr{}
+.table_index tbody tr td{}
+.table_index tbody tr td a{}
+.table_index tbody tr td a:hover{
+    color: black;
+}
+
+.fontedit{
+    padding: 15px;
+}
