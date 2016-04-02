@@ -42,8 +42,8 @@ $allDeleteBooks = $delbooks->deleteitems();
                                     <a class="navbar-brand" href="../../../../index.html">Atomic Project</a>
                                 </div>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="Views/BITM/SEIP116718/Books/index.php">Book</a></li>
-                                    <li><a href="#">Birthday</a></li>
+                                    <li><a href="index.php">Book</a></li>
+                                    <li><a href="../Birthday/index.php">Birthday</a></li>
                                     <li><a href="#">Textarea</a></li>
                                     <li><a href="#">Email</a></li> 
                                     <li><a href="#">Profile Picture</a></li>

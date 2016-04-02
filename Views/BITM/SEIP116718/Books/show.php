@@ -40,7 +40,7 @@ $onebook = $book->show($id);
                                 </div>
                                 <ul class="nav navbar-nav">
                                     <li><a href="Views/BITM/SEIP116718/Books/index.php">Book</a></li>
-                                    <li><a href="Views/BITM/SEIP116718/Birthday/index.php">Birthday</a></li>
+                                    <li><a href="../Birthday/index.php">Birthday</a></li>
                                     <li><a href="Views/BITM/SEIP116718/Textarea/index.php">Textarea</a></li>
                                     <li><a href="Views/BITM/SEIP116718/Email/index.php">Email</a></li> 
                                     <li><a href="Views/BITM/SEIP116718/Profile/index.php">Profile Picture</a></li>
@@ -65,9 +65,7 @@ $onebook = $book->show($id);
                                 </div>
                                 <ul class="nav navbar-nav">
                                     <li><a href="create.php">Create</a></li>
-                                    <li><a href="index.php">Read</a></li>
-                                    <li><a href="#">Update</a></li>
-                                    <li><a href="#">Delete Item</a></li>
+                                    <li><a href="deleteitem.php">Delete Item</a></li>
                                 </ul>
                             </div>
                         </nav> 

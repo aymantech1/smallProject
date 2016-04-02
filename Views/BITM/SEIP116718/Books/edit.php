@@ -94,7 +94,7 @@ $show = $edit->show($id);
                                 <input name="title" type="test" class="form-control" id="book" value="<?php echo $show['title'];?>" >
                             </div>
                            <input type="hidden" name="id" value="<?php echo $id ?>">
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="submit" class="btn btn-default">Update</button>
                             
                         </form>
                     </div>

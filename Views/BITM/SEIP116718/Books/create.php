@@ -36,11 +36,11 @@ if(isset($_SESSION['Massage'])){
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="../../../../index.html">Atomic Project</a>
+                                    <a class="navbar-brand mainproject" href="../../../../index.html">Atomic Project</a>
                                 </div>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="Views/BITM/SEIP116718/Books/index.php">Book</a></li>
-                                    <li><a href="#">Birthday</a></li>
+                                    <li><a href="index.php">Book</a></li>
+                                    <li><a href="../Birthday/index.php">Birthday</a></li>
                                     <li><a href="#">Textarea</a></li>
                                     <li><a href="#">Email</a></li> 
                                     <li><a href="#">Profile Picture</a></li>

@@ -48,7 +48,7 @@ $allbooks = $books->index();
                                 </div>
                                 <ul class="nav navbar-nav">
                                     <li><a href="index.php">Book</a></li>
-                                    <li><a href="#">Birthday</a></li>
+                                    <li><a href="../Birthday/index.php">Birthday</a></li>
                                     <li><a href="#">Textarea</a></li>
                                     <li><a href="#">Email</a></li> 
                                     <li><a href="#">Profile Picture</a></li>
