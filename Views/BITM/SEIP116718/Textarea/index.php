@@ -1,27 +1,24 @@
 <?php
-    include_once '../../../../vendor/autoload.php';
-    
-    use App\BITM\SEIP116718\Birthday\Birthday;
-    
-    session_start();
-    if (isset($_SESSION['Message']) ) {
-    echo $_SESSION['Message'];
-    unset($_SESSION['Message']);
-    }
-    
-    $birthdays = new Birthday();
-    $allBirthdays = $birthdays->index();
-    
-//    echo "<pre>";
-//    print_r($allBirthdays);
-//    echo "</pre>";
-?>
+include_once '../../../../vendor/autoload.php';
+use App\BITM\SEIP116718\Textarea\Textarea;
 
+session_start();
+if (isset($_SESSION['Message']) ) {
+    echo $_SESSION['Message'];
+   unset($_SESSION['Message']);
+}
+
+$books = new Textarea();
+$allbooks = $books->index();
+//echo"<pre>";
+//print_r($allbooks);
+//echo"</pre>";
+?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
-        <title>Birthday | Home</title>
+        <title>Textarea | Home</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,9 +47,9 @@
                                     <a class="navbar-brand" href="../../../../index.html">Atomic Project</a>
                                 </div>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="../Books/index.php">Book</a></li>
+                                    <li><a href="index.php">Book</a></li>
                                     <li><a href="../Birthday/index.php">Birthday</a></li>
-                                    <li><a href="../Textarea/index.php">Textarea</a></li>
+                                    <li><a href="#">Textarea</a></li>
                                     <li><a href="#">Email</a></li> 
                                     <li><a href="#">Profile Picture</a></li>
                                     <li><a href="#">Gender</a></li>
@@ -66,6 +63,7 @@
             </div>
         </div>
         
+        
         <div class="Sub_menu_area">
             <div class="container">
                 <div class="row">
@@ -73,7 +71,7 @@
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="index.php">Birthday</a>
+                                    <a class="navbar-brand" href="index.php">Textarea</a>
                                 </div>
                                 <ul class="nav navbar-nav">
                                     <li><a href="create.php">Create</a></li>
@@ -85,6 +83,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="table_area">
             <div class="container">
                 <div class="row">
@@ -93,15 +92,15 @@
                             <thead>
                                 <tr>
                                     <th>Serial</th>
-                                    <th>Birth Day</th>
+                                    <th>Text Area</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                if(isset($allBirthdays) && !empty($allBirthdays)){
+                                if(isset($allbooks) && !empty($allbooks)){
                                    $serial = 0;
-                                    foreach($allBirthdays as $row){
+                                    foreach($allbooks as $row){
                                        $serial++;
                                        ?>
                                         <tr>
@@ -132,7 +131,6 @@
             </div>
         </div>
         
-                
         <div class="main_menu_area">
             <div class="container">
                 <div class="row">

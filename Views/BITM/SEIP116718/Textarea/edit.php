@@ -1,27 +1,25 @@
 <?php
-    include_once '../../../../vendor/autoload.php';
-    
-    use App\BITM\SEIP116718\Birthday\Birthday;
-    
-    session_start();
-    if (isset($_SESSION['Message']) ) {
+include_once '../../../../vendor/autoload.php';
+use App\BITM\SEIP116718\Textarea\Textarea;
+
+session_start();
+if (isset($_SESSION['Message'])) {
     echo $_SESSION['Message'];
     unset($_SESSION['Message']);
-    }
-    
-    $birthdays = new Birthday();
-    $allBirthdays = $birthdays->index();
-    
-//    echo "<pre>";
-//    print_r($allBirthdays);
-//    echo "</pre>";
+}
+
+$id = $_GET['id'];
+
+$edit = new Textarea();
+$show = $edit->show($id);
+//print_r($show);
 ?>
 
 <!doctype html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
-        <title>Birthday | Home</title>
+        <title>Update Textarea</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,9 +48,9 @@
                                     <a class="navbar-brand" href="../../../../index.html">Atomic Project</a>
                                 </div>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="../Books/index.php">Book</a></li>
-                                    <li><a href="../Birthday/index.php">Birthday</a></li>
-                                    <li><a href="../Textarea/index.php">Textarea</a></li>
+                                    <li><a href="Views/BITM/SEIP116718/Books/index.php">Book</a></li>
+                                    <li><a href="#">Birthday</a></li>
+                                    <li><a href="#">Textarea</a></li>
                                     <li><a href="#">Email</a></li> 
                                     <li><a href="#">Profile Picture</a></li>
                                     <li><a href="#">Gender</a></li>
@@ -73,7 +71,7 @@
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="index.php">Birthday</a>
+                                    <a class="navbar-brand" href="index.php">Book</a>
                                 </div>
                                 <ul class="nav navbar-nav">
                                     <li><a href="create.php">Create</a></li>
@@ -85,54 +83,25 @@
                 </div>
             </div>
         </div>
-        <div class="table_area">
+        
+        <div class="table_area create_area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <table class="table table-inverse table_index">
-                            <thead>
-                                <tr>
-                                    <th>Serial</th>
-                                    <th>Birth Day</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                if(isset($allBirthdays) && !empty($allBirthdays)){
-                                   $serial = 0;
-                                    foreach($allBirthdays as $row){
-                                       $serial++;
-                                       ?>
-                                        <tr>
-                                            <td><?php echo $serial?></td>
-                                            <td><?php echo $row['title']?></td>
-                                            <td>
-                                                <a href="show.php?id=<?php echo $row['id']?>"><i class="fa fa-eye fontedit"></i></a>|
-                                                <a href="edit.php?id=<?php echo $row['id']?>"><i class="fa fa-pencil-square-o fontedit"></i></a>|
-                                                <a href="softdelete.php?id=<?php echo $row['id']; ?>"><i class="fa fa-trash fontedit"></i></a>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                else
-                                {
-                                    ?>
-                                   <tr>
-                                          <td colspan="3"><?php echo "No data available";?></td>
-                                   </tr>
-                                   <?php
-                                }
-                                   ?>
-                            </tbody>
-                        </table>
+                        <form action="update.php" method="post">
+                            <div class="form-group">
+                                <label for="book">Textarea</label>
+                                <input name="title" type="test" class="form-control" id="book" value="<?php echo $show['title'];?>" >
+                            </div>
+                           <input type="hidden" name="id" value="<?php echo $id ?>">
+                                <button type="submit" class="btn btn-default">Update</button>
+                            
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         
-                
         <div class="main_menu_area">
             <div class="container">
                 <div class="row">
@@ -150,6 +119,8 @@
                 </div>
             </div>
         </div>
+        
+        
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="../../../../html/js/bootstrap.min.js"></script>
