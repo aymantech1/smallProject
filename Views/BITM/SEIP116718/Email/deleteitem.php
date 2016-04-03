@@ -1,24 +1,17 @@
 <?php
+
 include_once '../../../../vendor/autoload.php';
-use App\BITM\SEIP116718\Book\Book;
+use App\BITM\SEIP116718\Email\Email;
 
-session_start();
-if (isset($_SESSION['Message']) ) {
-    echo $_SESSION['Message'];
-   unset($_SESSION['Message']);
-}
+$showalldata = new Email();
 
-$books = new Book();
-$allbooks = $books->index();
-//echo"<pre>";
-//print_r($allbooks);
-//echo"</pre>";
+$getalldata = $showalldata->deleteitems();
 ?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
-        <title>Book | Home</title>
+        <title>Email | Home</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -47,10 +40,10 @@ $allbooks = $books->index();
                                     <a class="navbar-brand" href="../../../../index.html">Atomic Project</a>
                                 </div>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="index.php">Book</a></li>
+                                    <li><a href="../Books/index.php">Book</a></li>
                                     <li><a href="../Birthday/index.php">Birthday</a></li>
-                                    <li><a href="#">Textarea</a></li>
-                                    <li><a href="#">Email</a></li> 
+                                    <li><a href="../Textarea/index.php">Textarea</a></li>
+                                    <li><a href="index.php">Email</a></li> 
                                     <li><a href="#">Profile Picture</a></li>
                                     <li><a href="#">Gender</a></li>
                                     <li><a href="#">Checkbox</a></li> 
@@ -71,7 +64,7 @@ $allbooks = $books->index();
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="index.php">Book</a>
+                                    <a class="navbar-brand" href="index.php">Email</a>
                                 </div>
                                 <ul class="nav navbar-nav">
                                     <li><a href="create.php">Create</a></li>
@@ -92,24 +85,23 @@ $allbooks = $books->index();
                             <thead>
                                 <tr>
                                     <th>Serial</th>
-                                    <th>Book Title</th>
+                                    <th>Email</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                if(isset($allbooks) && !empty($allbooks)){
+                                if(isset($getalldata) && !empty($getalldata)){
                                    $serial = 0;
-                                    foreach($allbooks as $row){
+                                    foreach($getalldata as $row){
                                        $serial++;
                                        ?>
                                         <tr>
                                             <td><?php echo $serial?></td>
                                             <td><?php echo $row['title']?></td>
                                             <td>
-                                                <a href="show.php?id=<?php echo $row['id']?>"><i class="fa fa-eye fontedit"></i></a>|
-                                                <a href="edit.php?id=<?php echo $row['id']?>"><i class="fa fa-pencil-square-o fontedit"></i></a>|
-                                                <a href="softdelete.php?id=<?php echo $row['id']; ?>"><i class="fa fa-trash fontedit"></i></a>
+                                                <a href="restore.php?id=<?php echo $row['id']?>"><i class="fa fa-retweet"></i> </a>|
+                                                <a href="delete.php?id=<?php echo $row['id']; ?>"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php
@@ -124,6 +116,7 @@ $allbooks = $books->index();
                                    <?php
                                 }
                                    ?>
+                               
                             </tbody>
                         </table>
                     </div>
@@ -165,3 +158,4 @@ $allbooks = $books->index();
         </script>
     </body>
 </html>
+

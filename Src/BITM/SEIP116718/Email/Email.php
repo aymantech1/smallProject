@@ -1,63 +1,72 @@
 <?php
 
-namespace App\BITM\SEIP116718\Book;
+namespace App\BITM\SEIP116718\Email;
 
-class Book {
-    public $id = "";
-    public $title = "";
+class Email {
+   
+    public $id = '';
+    public $title = '';
     
     public function __construct() {
-        $conn = mysql_connect('localhost', 'root', '') or die("Unable to connect");
-        mysql_select_db('atomicproject') or die('Unable to connect with DB');
+        $con = mysql_connect('localhost', 'root', '') or die('Unable to connect ');
+        mysql_select_db('atomicproject') or die('Unable to select DB');
     }
     
-    public function prepare($data = ""){
-        $this->id = $data['id'];
-        $this->title = $data['title'];
+    public function prepare($data = ''){
+        if(array_key_exists('id', $data)){
+            $this->id = $data['id'];
+        }
+        
+        if(array_key_exists('title', $data)){
+            $this->title = $data['title'];
+        }
+        
+        return $this;
     }
     
     public function storeDataInDatabase(){
-        
         session_start();
-        $query ="INSERT INTO `books` (`id`, `title`) VALUES (NULL, '".$this->title."')";
+        $query = "INSERT INTO `emails` (`id`, `title`) VALUES (NULL, '".$this->title."')";
         
         if(mysql_query($query)){
             $_SESSION['Massage'] = "Successfully Done";
         }
-        else
-            $_SESSION['Massage'] = "Not Done By Me Sorry ";
         
-        header('location:create.php');
-            
+        else{
+            $_SESSION['Massage'] = "Not Done By Me Sorry ";
+        }
+        
+         header('location:create.php');
     }
     
     public function index(){
         $mydata = array();
-        $qurey = "SELECT * FROM `books` WHERE deleted_at IS NULL";
-        $result = mysql_query($qurey);
+        $query = "SELECT * FROM `emails` WHERE delete_at IS NULL";
+        $result = mysql_query($query);
         while($row = mysql_fetch_assoc($result)){
             $mydata[] = $row;
         }
         return $mydata;
-        }
+    }
     
-        public function show($id=''){
+    public function show($id=''){
             $this->id = $id;
-            $query ="SELECT * FROM books WHERE id=".$this->id ;
+            $query ="SELECT * FROM emails WHERE id=".$this->id ;
             $result = mysql_query($query);
             $row = mysql_fetch_assoc($result);
             return $row;
-        }
-        
-        public function update(){
-            $query = "UPDATE `atomicproject`.`books` SET `title` = '".$this->title."' WHERE `books`.`id` =".$this->id;
+    }
+    
+    public function update(){
+            $query = "UPDATE `atomicproject`.`emails` SET `title` = '".$this->title."' WHERE `emails`.`id` =".$this->id;
             mysql_query($query);
             $_SESSION['Message'] = "<h2>" . "Data Successfully Updated" . "</h2>";
         header('location:index.php');
-        }
-          public function softdelete(){
+    }
+    
+    public function softdelete(){
         session_start();
-        $query = "UPDATE `atomicproject`.`books` SET `deleted_at` = '".date('Y-m-d')."' WHERE `books`.`id` =".$this->id;
+        $query = "UPDATE `atomicproject`.`emails` SET `delete_at` = '".date('Y-m-d')."' WHERE `emails`.`id` =".$this->id;
         mysql_query($query);
         $_SESSION['Message'] = "<h1>" . "Deleted Successfully" . "</h1>";
         header('location:index.php');
@@ -65,7 +74,7 @@ class Book {
     
     public function deleteitems(){
         $mydata = array();
-        $qurey = "SELECT * FROM `books` WHERE deleted_at IS Not NULL";
+        $qurey = "SELECT * FROM `emails` WHERE delete_at IS Not NULL";
         $result = mysql_query($qurey);
         while($row = mysql_fetch_assoc($result)){
             $mydata[] = $row;
@@ -76,16 +85,16 @@ class Book {
     public function restoreData($id=''){
         session_start();
         $this->id = $id;
-        $qurey = "UPDATE `books` SET `deleted_at` = NULL WHERE `books`.`id` =".$this->id;
+        $qurey = "UPDATE `emails` SET `delete_at` = NULL WHERE `emails`.`id` =".$this->id;
         $result = mysql_query($qurey);
         $_SESSION['Message'] = "<h2>" . "Data Successfully Restore" . "</h2>";
         header('location:index.php');
         
     }
-
-        public function permanentDelete($id=''){
+    
+    public function permanentDelete($id=''){
         $this->id= $id;
-        $query = "DELETE FROM `atomicproject`.`books` WHERE `books`.`id` =".$this->id;
+        $query = "DELETE FROM `atomicproject`.`emails` WHERE `emails`.`id` =".$this->id;
         mysql_query($query);
         $_SESSION['Message'] = "<h1>". "Deleted Successfully" ."</h1>";
         header('location:index.php');
