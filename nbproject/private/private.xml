@@ -11,6 +11,25 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Gender/edit.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Gender/update.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/create.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/delete.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/update.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/edit.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/softdelete.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Src/BITM/SEIP116718/Email/Email.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/index.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Gender/index.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Gender/store.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Src/BITM/SEIP116718/Select/Select.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/show.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Src/BITM/SEIP116718/Gender/Gender.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Gender/create.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/index.html</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/deleteitem.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Select/restore.php</file>
+        </group>
     </open-files>
 </project-private>
