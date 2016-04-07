@@ -1,7 +1,7 @@
 <?php
 
 namespace App\BITM\SEIP116718\Book;
-
+error_reporting(E_ALL ^ E_DEPRECATED);
 class Book {
     public $id = "";
     public $title = "";

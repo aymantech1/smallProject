@@ -1,7 +1,7 @@
 <?php
 
 include_once '../../../../vendor/autoload.php';
-use App\BITM\SEIP116718\Hobby\Hobby;
+use App\BITM\SEIP116718\Profilepic\Profilepic;
 $id = $_GET['id'];
-$delete = new Hobby();
+$delete = new Profilepic();
 $delete->delete($id);

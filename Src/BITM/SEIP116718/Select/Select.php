@@ -1,5 +1,6 @@
 <?php
 namespace App\BITM\SEIP116718\Select;
+error_reporting(E_ALL ^ E_DEPRECATED);
 class Select {
     public $id = '';
     public $title = '';

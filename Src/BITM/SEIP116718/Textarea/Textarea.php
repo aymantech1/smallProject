@@ -1,6 +1,7 @@
 <?php
 
 namespace App\BITM\SEIP116718\Textarea;
+error_reporting(E_ALL ^ E_DEPRECATED);
 
 class Textarea {
     public $id = "";
