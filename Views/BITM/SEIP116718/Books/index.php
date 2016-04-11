@@ -76,6 +76,7 @@ $allbooks = $books->index();
                                 <ul class="nav navbar-nav">
                                     <li><a href="create.php">Create</a></li>
                                     <li><a href="deleteitem.php">Delete Item</a></li>
+                                    <li><a href="pdf.php">Dowland PDF</a></li>
                                 </ul>
                             </div>
                         </nav> 

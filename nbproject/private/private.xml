@@ -12,11 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Books/delete.php</file>
-            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Books/create.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Src/BITM/SEIP116718/Profilepic/Profilepic.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Profilepic/update.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Profilepic/edit.php</file>
             <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Books/edit.php</file>
-            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Books/index.php</file>
-            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Hobby/edit.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/Views/BITM/SEIP116718/Profilepic/index.php</file>
+            <file>file:/D:/xampp/htdocs/smallProject/index.html</file>
         </group>
     </open-files>
 </project-private>
